@@ -2,8 +2,6 @@ package org.app.demo.lms.rest;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +19,6 @@ import org.app.demo.lms.entity.User;
 @RequestMapping("/api")
 public class UserRestController {
 
-    private static final Logger log = LoggerFactory.getLogger(UserRestController.class);
-
 	private UserService userService;
 	
 	@Autowired
@@ -33,7 +29,6 @@ public class UserRestController {
 	// expose "/users" and return list of users
 	@GetMapping("/users")
 	public List<User> findAll() {
-		log.info("Info log statement for LoggingDemoController");
 		return userService.findAll();
 	}
 
